@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seckill.dao.SuccessKilledDao">
+    <!-- 为Dao接口方法提供sql语句配置 -->
+    <!--/**-->
+    <!--* 插入购买明细-->
+    <!--* @param seckillId-->
+    <!--* @param userPhone-->
+    <!--* @return-->
+    <!--*/-->
+    <!--int insertSuccessKill(long seckillId,long userPhone);-->
+
+    <!--/**-->
+    <!--* 根据主键查询 带回Seckill-->
+    <!--* @param seckillId-->
+    <!--* @param userPhone-->
+    <!--* @return-->
+    <!--*/-->
+    <!--SuccessKilled queryByIdWithSeckill(long seckillId,long userPhone);-->
+
+    <insert id="insertSuccessKill">
+        insert ignore into success_killed(seckill_id,user_phone,status)
+        VALUE (#{seckillId},#{userPhone},1)
+    </insert>
+
+    <select id="queryByIdWithSeckill" resultType="com.seckill.mapperresult.SuccessKilledResult">
+        <!-- 根据id查询SuccessKilled 并待会Seckill-->
+        <!-- 如何告诉MyBatis把结果映射到SuccessKilled同事待会seckill属性-->
+        select
+        t1.seckill_id,
+        t1.user_phone,
+        t1.create_time,
+        t1.status
+        <include refid="com.seckill.dao.SeckillDao.joinTemp" />
+        from success_killed t1 inner JOIN seckill seckill on t1.seckill_id=seckill.seckill_id
+        where t1.seckill_id=#{seckillId} and t1.user_phone=#{userPhone}
+    </select>
+
+
+    <!--<select id="queryWithSeckill" resultType="com.seckill.entity.SuccessKilled" parameterType="">-->
+        <!--&lt;!&ndash; 根据id查询SuccessKilled 并待会Seckill&ndash;&gt;-->
+        <!--&lt;!&ndash; 如何告诉MyBatis把结果映射到SuccessKilled同事待会seckill属性&ndash;&gt;-->
+        <!--select-->
+        <!--t1.seckill_id,-->
+        <!--t1.user_phone,-->
+        <!--t1.create_time,-->
+        <!--t1.status-->
+        <!--<include refid="com.seckill.dao.SeckillDao.joinTemp" />-->
+        <!--from success_killed t1 inner JOIN seckill seckill on t1.seckill_id=seckill.seckill_id-->
+        <!--where t1.seckill_id=#{seckillId} and t1.user_phone=#{userPhone}-->
+    <!--</select>-->
+
+
+    <!--<select id="query" resultType="com.seckill.entity.SuccessKilled"  parameterType="com.seckill.mapperparam.SuccessKilledQuery">-->
+        <!--select-->
+        <!--<include refid="Base_Column_List"/>-->
+        <!--<include refid="com.seckill.dao.SeckillDao.joinTemp" />-->
+        <!--from success_killed t1 inner join seckill seckill-->
+        <!--<include refid="Example_Where_Clause"/>-->
+        <!--<include refid="com.seckill.dao.SeckillDao.Example_Joined_Where_Clause"/>-->
+    <!--</select>-->
+
+    <select id="query" resultType="com.seckill.mapperresult.SuccessKilledResult" parameterType="com.seckill.mapperparam.SuccessKilledQuery">
+        select
+        t1.seckill_Id,t1.user_Phone,t1.status,t1.create_time,
+        seckill.seckill_id "seckill.seckill_id",
+        seckill.name "seckill.name",
+        seckill.number "seckill.number",
+        seckill.start_time "seckill.start_time",
+        seckill.end_time "seckill.end_time",
+        seckill.create_time "seckill.create_time"
+        from success_killed t1 inner join seckill seckill
+        where t1.seckill_Id=seckill.seckill_id
+        <include refid="Example_Where_Clause"/>
+        <include refid="com.seckill.dao.SeckillDao.Example_Joined_Where_Clause"/>
+    </select>
+</mapper>

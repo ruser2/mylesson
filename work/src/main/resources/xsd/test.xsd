@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- targetNamespace 必须=xmlns  外部引用的时候也是引用这个命名空间-->
+<xs:schema id="XMLSchema2"
+
+           targetNamespace="aaa1"
+
+           elementFormDefault="qualified"
+
+           xmlns="aaa1"
+
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+
+>
+    <!-- 元素名称test 对应的类型是mytype -->
+    <xs:element name="test" type="mytype">
+    </xs:element>
+
+    <xs:simpleType name="mySimpleTypeStringList">
+        <xs:list itemType="xs:integer">
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:minLength value="1"></xs:minLength>
+                    <xs:maxLength value="2"></xs:maxLength>
+                    <xs:maxInclusive value="50"></xs:maxInclusive>
+                    <xs:minInclusive value="1"></xs:minInclusive>
+                </xs:restriction>
+            </xs:simpleType>
+            <!--<xs:simpleType>-->
+                <!--<xs:restriction base="xs:string">-->
+                    <!--<xs:length value="1"></xs:length>-->
+                <!--</xs:restriction>-->
+            <!--</xs:simpleType>-->
+        </xs:list>
+    </xs:simpleType>
+    <!-- 声明了一个复杂类型 mytype-->
+    <xs:complexType name="mytype">
+        <!-- 按照指定sequence 顺序排列-->
+        <xs:sequence>
+            <xs:element name="test2">
+                <xs:simpleType>
+                    <!-- restriction 限定了对应类型  base integer代表值只能是integer类型-->
+                    <xs:restriction base="xs:integer">
+                        <!-- 值限定成下列之一(基于base的基础上)-->
+                        <xs:enumeration value="1"/>
+                        <xs:enumeration value="2"/>
+                        <xs:enumeration value="45"/>
+                        <xs:enumeration value="c"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="test3" type="mySimpleTypeStringList"></xs:element>
+            <xs:element name="simpleint" type="xs:integer" fixed="-1">
+
+            </xs:element>
+            <xs:element name="simplestr" type="xs:string" default="simplestrdefault"/>
+            <xs:element name="simpledate" type="xs:date" />
+            <xs:element name="simpledateTime" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

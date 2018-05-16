@@ -1,0 +1,68 @@
+2018-03-18 16:10:48,602 Starting ProductCategoryDaoTest on zhouyh with PID 4412 (started by Administrator in G:\lesson\work)
+2018-03-18 16:10:48,633 No active profile set, falling back to default profiles: default
+2018-03-18 16:10:48,676 Refreshing org.springframework.web.context.support.GenericWebApplicationContext@167bb7e: startup date [Sun Mar 18 16:10:48 CST 2018]; root of context hierarchy
+2018-03-18 16:10:49,836 Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$471aacab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 16:10:50,088 HikariPool-1 - Starting...
+2018-03-18 16:10:50,124 HikariPool-1 - Start completed.
+2018-03-18 16:10:50,192 Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:10:50,242 HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-18 16:10:50,366 HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-18 16:10:50,374 HHH000206: hibernate.properties not found
+2018-03-18 16:10:50,433 HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-18 16:10:50,599 HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-18 16:10:51,032 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:10:51,900 Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:10:51,906 HikariPool-1 - Shutdown initiated...
+2018-03-18 16:10:51,914 HikariPool-1 - Shutdown completed.
+2018-03-18 16:10:51,923 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-03-18 16:12:10,969 Starting ProductCategoryDaoTest on zhouyh with PID 3484 (started by Administrator in G:\lesson\work)
+2018-03-18 16:12:10,970 No active profile set, falling back to default profiles: default
+2018-03-18 16:12:11,004 Refreshing org.springframework.web.context.support.GenericWebApplicationContext@eb3185: startup date [Sun Mar 18 16:12:11 CST 2018]; root of context hierarchy
+2018-03-18 16:12:12,087 Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8095687a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 16:12:12,318 HikariPool-1 - Starting...
+2018-03-18 16:12:12,336 HikariPool-1 - Start completed.
+2018-03-18 16:12:12,390 Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:12:12,557 HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-18 16:12:12,558 HHH000206: hibernate.properties not found
+2018-03-18 16:12:12,614 HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-18 16:12:12,767 HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-18 16:12:13,175 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:12:14,043 Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:12:14,044 HikariPool-1 - Shutdown initiated...
+2018-03-18 16:12:14,048 HikariPool-1 - Shutdown completed.
+2018-03-18 16:13:29,955 Starting ProductCategoryDaoTest on zhouyh with PID 5888 (started by Administrator in G:\lesson\work)
+2018-03-18 16:13:29,961 No active profile set, falling back to default profiles: default
+2018-03-18 16:13:29,995 Refreshing org.springframework.web.context.support.GenericWebApplicationContext@81f72c: startup date [Sun Mar 18 16:13:29 CST 2018]; root of context hierarchy
+2018-03-18 16:13:31,109 Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f5bd3d91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 16:13:31,347 HikariPool-1 - Starting...
+2018-03-18 16:13:31,366 HikariPool-1 - Start completed.
+2018-03-18 16:13:31,423 Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:13:31,552 HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-18 16:13:31,554 HHH000206: hibernate.properties not found
+2018-03-18 16:13:31,605 HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-18 16:13:31,761 HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-18 16:13:32,071 HikariPool-1 - Shutdown initiated...
+2018-03-18 16:13:32,123 HikariPool-1 - Shutdown completed.
+2018-03-18 16:15:19,575 Starting ProductCategoryDaoTest on zhouyh with PID 6224 (started by Administrator in G:\lesson\work)
+2018-03-18 16:15:19,576 No active profile set, falling back to default profiles: default
+2018-03-18 16:15:19,609 Refreshing org.springframework.web.context.support.GenericWebApplicationContext@161c410: startup date [Sun Mar 18 16:15:19 CST 2018]; root of context hierarchy
+2018-03-18 16:15:20,537 Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d02287de] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-18 16:15:20,740 HikariPool-1 - Starting...
+2018-03-18 16:15:20,760 HikariPool-1 - Start completed.
+2018-03-18 16:15:20,813 Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-18 16:15:20,835 HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-18 16:15:20,923 HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-18 16:15:20,925 HHH000206: hibernate.properties not found
+2018-03-18 16:15:20,971 HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-18 16:15:21,111 HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-18 16:15:21,415 HikariPool-1 - Shutdown initiated...
+2018-03-18 16:15:21,420 HikariPool-1 - Shutdown completed.
+2018-03-18 16:15:21,425 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d %p  [%msg]%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <!--<appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+            <!--<level>INFO</level>-->
+            <!--<onMatch>ACCEPT</onMatch>-->
+            <!--<onMismatch>DENY</onMismatch>-->
+        <!--</filter>-->
+        <!--<encoder>-->
+            <!--<pattern>-->
+                <!--%d %m%n-->
+            <!--</pattern>-->
+        <!--</encoder>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<fileNamePattern>-->
+                <!--logs/info.%d.log-->
+            <!--</fileNamePattern>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+    <!--<appender name="fileDebugLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+            <!--<level>DEBUG</level>-->
+            <!--<onMatch>ACCEPT</onMatch>-->
+            <!--<onMismatch>DENY</onMismatch>-->
+        <!--</filter>-->
+        <!--<encoder>-->
+            <!--<pattern>-->
+               <!--%d %m%n-->
+            <!--</pattern>-->
+        <!--</encoder>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<fileNamePattern>-->
+                <!--logs/debug.%d.log-->
+            <!--</fileNamePattern>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+    <!--<appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+            <!--<level>ERROR</level>-->
+            <!--<onMatch>ACCEPT</onMatch>-->
+            <!--<onMismatch>DENY</onMismatch>-->
+        <!--</filter>-->
+        <!--<encoder>-->
+            <!--<pattern>-->
+                <!--%d  %m%n-->
+            <!--</pattern>-->
+        <!--</encoder>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<fileNamePattern>-->
+                <!--logs/error.%d.log-->
+            <!--</fileNamePattern>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+
+    <appender name="db" class="ch.qos.logback.classic.db.DBAppender">
+
+        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+                <driverClass>com.mysql.jdbc.Driver</driverClass>
+                <url>jdbc:mysql://127.0.0.1:3306/work</url>
+                <user>root</user>
+                <password>123456</password>
+        </connectionSource>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="consoleLog" />
+        <!--<appender-ref ref="fileInfoLog" />-->
+        <!--<appender-ref ref="fileErrorLog" />-->
+        <!--<appender-ref ref="fileDebugLog" />-->
+        <!--<appender-ref ref="db" />-->
+    </root>
+</configuration>
+
+
+        <!--log4j.appender.db=org.apache.log4j.jdbc.JDBCAppender-->
+        <!--log4j.appender.db.BufferSize=10-->
+        <!--log4j.appender.db.driver=com.mysql.jdbc.Driver-->
+        <!--log4j.appender.db.URL=jdbc\:mysql\://127.0.0.1\:3306/linshi?useUnicode=true&amp;characterEncoding=utf-8&zeroDateTimeBehavior\=convertToNull-->
+        <!--log4j.appender.db.user=root-->
+        <!--log4j.appender.db.password=123456-->
+        <!--#log4j.appender.db.Threshold = ERROR-->
+        <!--log4j.appender.db.sql=insert into LOG (UserId,Class,Mothod,createTime,MSG,workdate,level) values ('%X{user}','%C','%M','%d{yyyy-MM-dd HH:mm:ss.sss}',"%m",'%X{workDate}','%p')-->
+
+        <!--log4j.appender.db.layout=org.apache.log4j.PatternLayout-->

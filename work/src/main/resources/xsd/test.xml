@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test xmlns="aaa1">
+    <test2> </test2>
+    <test3>3222111111 4 aa</test3>
+    <simpleint>111111111</simpleint>
+    <simplestr></simplestr>
+    <simpledate></simpledate>
+    <simpledateTime></simpledateTime>
+
+</test>

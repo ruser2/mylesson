@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seckill.dao.SeckillDao">
+
+    <select id="selectUserById" statementType="CALLABLE" useCache="false">
+        {call select_user_by_id(
+        #{id, mode=IN},
+        #{userName, mode=OUT, jdbcType=VARCHAR},
+        #{userPassword, mode=OUT, jdbcType=VARCHAR},
+        #{userEmail, mode=OUT, jdbcType=VARCHAR},
+        #{userInfo, mode=OUT, jdbcType=VARCHAR},
+        #{headImg, mode=OUT, jdbcType=BLOB, javaType=_byte[]},
+        #{createTime, mode=OUT, jdbcType=TIMESTAMP}
+        )}
+    </select>
+
+    <sql id="joinTemp">
+        ,
+        seckill.seckill_id "seckill.seckill_id",
+        seckill.name "seckill.name",
+        seckill.number "seckill.number",
+        seckill.start_time "seckill.start_time",
+        seckill.end_time "seckill.end_time",
+        seckill.create_time "seckill.create_time"
+    </sql>
+
+    <sql id="Example_Joined_Where_Clause">
+        <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill)">
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.seckillId)">
+                and seckill.seckill_id = #{seckill.seckillId}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.name)">
+                and seckill.name = #{seckill.name}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.nameLike)">
+                and seckill.name like concat(concat('%', #{seckill.nameLike}), '%')
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.number)">
+                and seckill.number = #{seckill.number}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.startTime)">
+                and seckill.start_time = #{seckill.startTime}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.startTimeBegin)">
+                and seckill.start_time <![CDATA[<=]]>  #{seckill.startTime}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.startTimeEnd)">
+                and seckill.start_time <![CDATA[>=]]>  #{seckill.startTime}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.endTime)">
+                and seckill.end_time = #{seckill.endTime}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.endTimeBegin)">
+                and seckill.end_time <![CDATA[<=]]>  #{seckill.endTimeBegin}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.endTimeEnd)">
+                and seckill.end_time <![CDATA[>=]]>  #{seckill.endTimeEnd}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.createTime)">
+                and seckill.create_time = #{seckill.createTime}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.createTimeBegin)">
+                and seckill.end_time <![CDATA[<=]]>  #{seckill.createTimeBegin}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.createTimeEnd)">
+                and seckill.end_time <![CDATA[>=]]>  #{seckill.createTimeEnd}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckill.seckillIds)">
+                and seckill.seckill_id in
+                <foreach collection="seckill.seckillIds" item="item" index="index" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </if>
+    </sql>
+</mapper>

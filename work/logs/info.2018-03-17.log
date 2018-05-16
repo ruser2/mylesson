@@ -1,0 +1,28 @@
+2018-03-17 20:41:23,662 Starting LoggerTest on zhouyh with PID 12836 (started by Administrator in G:\lesson\work)
+2018-03-17 20:41:23,695 No active profile set, falling back to default profiles: default
+2018-03-17 20:41:23,752 Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1d455c9: startup date [Sat Mar 17 20:41:23 CST 2018]; root of context hierarchy
+2018-03-17 20:41:25,587 Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$25b71b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-17 20:41:25,980 HikariPool-1 - Starting...
+2018-03-17 20:41:26,014 HikariPool-1 - Start completed.
+2018-03-17 20:41:26,126 Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-17 20:41:26,164 HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-17 20:41:26,398 HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-17 20:41:26,410 HHH000206: hibernate.properties not found
+2018-03-17 20:41:26,474 HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-17 20:41:26,717 HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-03-17 20:41:27,414 Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-17 20:41:28,776 Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1d455c9: startup date [Sat Mar 17 20:41:23 CST 2018]; root of context hierarchy
+2018-03-17 20:41:28,960 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-17 20:41:28,975 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-17 20:41:29,060 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 20:41:29,069 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 20:41:29,156 Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-17 20:41:29,749 Started LoggerTest in 7.733 seconds (JVM running for 9.229)
+2018-03-17 20:41:29,929 info
+2018-03-17 20:41:29,950 info
+2018-03-17 20:41:29,983 Closing org.springframework.web.context.support.GenericWebApplicationContext@1d455c9: startup date [Sat Mar 17 20:41:23 CST 2018]; root of context hierarchy
+2018-03-17 20:41:29,996 Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-17 20:41:30,006 HikariPool-1 - Shutdown initiated...
+2018-03-17 20:41:30,021 HikariPool-1 - Shutdown completed.

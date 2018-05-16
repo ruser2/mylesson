@@ -1,0 +1,22 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /dev
+test:
+  test: test
+  test1: bbb
+  test2: test2
+  test3: test3
+spring:
+  datasource:
+     driver-class-name: com.mysql.jdbc.Driver
+     username: root
+     password: 123456
+     url: jdbc:mysql://127.0.0.1:3306/seckill
+  jpa:
+    hibernate:
+      show-sql: true
+      ddl-auto: update
+
+
+

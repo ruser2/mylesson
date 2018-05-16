@@ -1,0 +1,45 @@
+DAO层工作演变为:接口设计+SQL编写
+代码和sql分离,方便review
+Service做逻辑:拼接Dao
+
+Spring IOC功能理解:
+对象工厂(对象交由spring管理)
+依赖管理(spring来注入)
+
+得到抑制的访问接口
+
+IOC的好处:
+对象创建统一托管
+规范的生命周期管理
+灵活的依赖注入
+一致的获取对象方式
+
+IOC注入方式和场景:
+方式              场景
+XML             第三方的bean,直接声明bean的class
+                需要命名空间配置: <xmlns:context="http://www.springframework.org/schema/context"xsi:schemaLocation="xsd的url">
+注解              开发写出来类 使用注解 @Service @Controller
+java配置类        需要代码控制对象创建逻辑的场景;比如自定义修改依赖类库
+
+声明式事物:
+开启事物--> sql-1   -->  sql-2 -->提交/回滚事物
+使用方式
+ProxyFactoryBean    +   xml   不建议
+tx:advice+aop命名空间   一次配置就好
+建议用@Transactional 注解控制
+
+事物方法嵌套
+生命识时务独有的概念
+传播行为
+
+什么时候回归事物
+抛出运行期异常(RuntimeException) 回滚
+不要不当catch RuntimeException 造成没有回滚
+
+
+web层
+前端交付设计: 根据需求设计前端交付流程
+Restful
+SpringMVC
+bootstrap+jquery
+

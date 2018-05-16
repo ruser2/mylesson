@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seckill.dao.SuccessKilledDao">
+
+    <sql id="Base_Column_List" >
+        t1.seckill_Id,t1.user_Phone,t1.status,t1.create_time
+    </sql>
+    <sql id="Example_Where_Clause">
+        <trim  suffixOverrides="," >
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckillId)" >
+                and t1.seckill_Id =  #{seckillId}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(userPhone)" >
+                and t1.user_Phone =  #{userPhone}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(status)" >
+                and t1.status =  #{status}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(createTime)" >
+                and t1.create_time =  #{createTime}
+            </if>
+            <if test="@com.seckill.utils.MapperUtil@instance.isNotEmpty(seckillIds)" >
+                and t1.seckill_id in
+                <foreach collection="seckillIds" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+            </if>
+        </trim>
+    </sql>
+</mapper>
